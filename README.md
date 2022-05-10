@@ -22,3 +22,16 @@
 #### Ex4:
 - ./a.out  (a+b)a*
 - Resultado: a, b, aa, ba, aaa, baa, aaaa, baaa, ...
+
+
+
+### Como rodar o projeto
+    - pip install virtualenv
+    - python3 -m vitrualenv venv
+    - linux
+        - source venv/bin/activate
+    - windows
+        - mypthon\Scripts\activate
+    - pip install Flask==2.1.2
+    - export FLASK_APP=app.py
+
