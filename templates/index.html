@@ -31,9 +31,11 @@
         </form>
       </div>
       <div class="container">
-        <h3>
-          {%if exp%}
-            {{exp}}
+        <h3 class="row  justify-content-md-center">
+          {%if cadeias%}
+              {%for cadeias in cadeias%}
+                {{cadeias}},
+              {%endfor%}
           {%endif%}
         </h3>
       </div>
