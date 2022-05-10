@@ -1,8 +1,10 @@
+from crypt import methods
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index (): 
-    return render_template('index.html')
+    exp=''
+    return render_template('index.html',exp=exp)

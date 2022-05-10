@@ -14,17 +14,24 @@
 </head>
 <body>
      <main class="container">
-        <form class=" form-control form-control-lg col-8">
+        <form action="/" method="POST" class="form-control form-control-lg col-8">
             <div class="col-auto">
               <label for="inputPassword2" class="visually-hidden">Expressões</label>
-              <input type="text" class="form-control" id="inputPassword2" placeholder="expressão">
+              <input name="expressao" type="text" class="form-control" id="inputPassword2" placeholder="expressão">
             </div>
             <div id="butao" class="col-4 pt-4">
               <button type="submit" class="btn btn-primary mb-3">Gerar</button>
             </div>
           </form>
           <div class="exporessao">
-            <p class="expressao-text"></p>
+            <p class="expressao-text">
+                {%if exp%}
+                    <br><br><br>
+                    <h3>{{exp}}</h3>
+                {% else %}
+                    {{null}}
+                {%endif%}
+            </p>
           </div>
 
      </main>
