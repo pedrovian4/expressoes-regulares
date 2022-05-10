@@ -34,4 +34,6 @@
         - mypthon\Scripts\activate
     - pip install Flask==2.1.2
     - export FLASK_APP=app.py
+    - export FLASK_ENV=development
+
 
