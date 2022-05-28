@@ -22,7 +22,7 @@
 
         <form action="/" method="post">
             <div class="child">
-              <input class="inputField" type="text" name="Expression" value="" placeholder="Insert Expression: ex (a+b)">
+              <input class="inputField" type="text" name="expression" value="" placeholder="Insert Expression: ex (a+b)">
             </div>
         
             <div class="child">
@@ -31,12 +31,14 @@
         </form>
       </div>
       <div class="container">
-        <h3 class="row  justify-content-md-center">
-          {%if cadeias%}
-              {%for cadeias in cadeias%}
-                {{cadeias}},
-              {%endfor%}
+        <h3 class="row justify-content-md-center">
+          {%if language|length%}
+            {% for word in language%}
+              {{word}},
+            {%endfor%} 
           {%endif%}
+       
+            
         </h3>
       </div>
     </div>

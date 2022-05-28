@@ -1,25 +1,27 @@
-from re import M
-from flask import Flask, render_template, request
 
-app = Flask(__name__)
-symbols=('*','+','(',')','^')
-
-def generate(exp): 
-    exp_symbols:str
-    for i in symbols:
-        if i in exp: 
-            exp_symbols=exp 
-        
+from tkinter.messagebox import RETRY
+from flask import Flask, redirect, render_template, request
+from re import findall 
+from exp import  generate
 
 
 
-@app.route('/', methods=['GET', 'POST'])
-def index (): 
-
+def create_app(): 
+    app = Flask(__name__)
     
-    exp= request.form.get("Expression")
-    cadeias =['aaaaa','bbbbb','cccccc']
+    @app.route('/exception')
+    def exception(): 
+        return render_template('exception.html')
     
+    @app.route('/', methods=["GET", "POST",])
+    def index (): 
+        language=''
+        if request.method == "POST":
+            exp= request.form.get("expression")
+            if len(findall('\(',exp)) !=0  :
+                return redirect('/exception') 
+
+            language = generate(exp)       
     
-    
-    return render_template('index.html',cadeias=cadeias)
+        return render_template('index.html',language=language)
+    return app
